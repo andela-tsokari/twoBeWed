@@ -1,0 +1,20 @@
+{
+  "name": "TwoBeWed",
+  "version": "0.0.1",
+  "authors": [
+    "Tams Sokari <tams.sokari@andela.com>"
+  ],
+  "description": "MEAN Stack Web Application",
+  "main": "server.js",
+  "keywords": [
+    "AngularJS"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
