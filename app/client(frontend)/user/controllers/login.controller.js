@@ -13,7 +13,7 @@
       };
 
       $http
-        .post('http://localhost:4000/api/v1/login', vm.payload)
+        .post('https://two-be-wed.herokuapp.com/api/v1/login', vm.payload)
         .success(function(data) {
           console.log(data);
         })

@@ -18,7 +18,7 @@
       };
 
       $http
-        .post('http://localhost:4000/api/v1/signup', vm.payload)
+        .post('https://two-be-wed.herokuapp.com/api/v1/signup', vm.payload)
         .success(function(data, status, headers) {
           console.log(data + status);
         })
