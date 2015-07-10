@@ -64,11 +64,11 @@ exports.login = function(req, res) {
             .compare(req.body.password, found.password, function(err, valid) {
               if (err) {
                 res
-                  .send({
+                  .json({
                     error: 'Incorrect Username/Password',
                   });
               }
-              else {
+              else if (valid) {
                 var token = jwt.sign(found, secret);
                 res
                   .json({
@@ -83,7 +83,7 @@ exports.login = function(req, res) {
 
         if (notFound) {
           res
-            .send({
+            .json({
               error: 'You have not signed up yet'
             });
         }
