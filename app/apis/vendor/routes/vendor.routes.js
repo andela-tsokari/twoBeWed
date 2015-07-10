@@ -7,9 +7,9 @@ module.exports = function(router) {
     .post(vendor.create);
 
   router
-    .route('/vendors/:name')
-    .get(vendor.getOne)
-    .put(vendor.editOne)
-    .delete(vendor.deleteOne);
+    .route('/vendors/:id')
+    .get(vendor.getById)
+    .put(vendor.editById)
+    .delete(vendor.deleteById);
 
 };

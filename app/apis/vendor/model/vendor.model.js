@@ -14,6 +14,14 @@ var vendor = new Schema({
     }
   },
 
+  contact: {
+    phoneNumber: {
+      type: String
+    },
+    email: String,
+    website: String
+  },
+
   clients: [],
 
   notes: []

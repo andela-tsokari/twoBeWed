@@ -7,9 +7,9 @@ module.exports = function(router) {
     .post(client.create);
 
   router
-    .route('/clients/:name')
-    .get(client.getOne)
-    .put(client.editOne)
-    .delete(client.deleteOne);
+    .route('/clients/:id')
+    .get(client.getById)
+    .put(client.editById)
+    .delete(client.deleteById);
 
 };

@@ -9,11 +9,13 @@ var client = new Schema({
   },
 
   weddingDate: {
-    type: Date
+    type: Date,
+    required: true
   },
 
   package: {
-
+    main: String,
+    extras: []
   },
 
   location: {
