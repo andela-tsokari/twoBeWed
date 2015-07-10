@@ -2,21 +2,47 @@
 <html>
   <head>
     <title>TwoBeWed App</title>
-    <link rel="stylesheet" href=".css" />
+    <!-- <link rel="stylesheet" href="libs/bootstrap-3.3.5-dist/bootstrap.css" /> -->
     <meta charset="utf-8" />
   </head>
-  <body>
-
+  <body ng-app="TwoBeWed" style="margin: 0 auto; width: 400px;">
+    <form ng-controller="signup as new" ng-submit="new.signup()" novalidate>
+      <fieldset>
+        <legend>Sign Up</legend>
+        <input type="text" required ng-model="new.name"> <br>
+        <input type="email" required ng-model="new.email"> <br>
+        <input type="text" required ng-model="new.username"> <br>
+        <input type="password" required ng-model="new.password"> <br>
+        <button type="submit">Sign Up</button>
+      </fieldset>
+    </form>
+    <!-- Initial Angular Files -->
+    <form ng-controller="login as old" ng-submit="old.login()" novalidate ng-submit="">
+      <fieldset>
+        <legend>Log In</legend>
+        <input type="text" required ng-model="old.username"> <br>
+        <input type="password" required ng-model="old.password"> <br>
+        <button type="submit">Log In</button>
+      </fieldset>
+    </form>
 
     <!-- Angular Core and Extras -->
     <script type="text/javascript" src="libs/angular/angular.js"></script>
     <script type="text/javascript" src="libs/angular-resource/angular-resource.js">
     </script>
-    <script type="text/javascript" src="libs/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="libs/angular-route/angular-route.js">
+    </script>
+    <script type="text/javascript" src="libs/angular-cookies/angular-cookies.js">
+    </script>
+    <script type="text/javascript" src="libs/angular-bootstrap/ui-bootstrap.js">
+    </script>
     <!-- Angular Modules -->
-    <script type="text/javascript"></script>
+    <script type="text/javascript" src="app/client(frontend)/app.js"></script>
     <!-- Angular Controllers -->
-    <script type="text/javascript"></script>
+    <script type="text/javascript" src="app/client(frontend)/user/controllers/signup.controller.js">
+    </script>
+    <script type="text/javascript" src="app/client(frontend)/user/controllers/login.controller.js">
+    </script>
     <!-- Angular Services -->
 
   </body>
