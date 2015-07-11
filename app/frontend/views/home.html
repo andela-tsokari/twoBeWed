@@ -1,0 +1,41 @@
+ <section ng-cloak style="max-height: 500px; width: 400px; margin: auto; position: absolute; top: 0; right: 0; bottom: 0; left: 0; border: 2px solid black; padding: 10px; border-radius: 10px;">
+   <section>
+     <form id="signup" novalidate ng-submit="home.signup()">
+       <fieldset>
+        <legend>Sign Up</legend>
+         <section >
+           <label>Name</label>
+           <input class="form-control" type="text" required ng-model="home.su.name"> <br>
+         </section>
+         <section >
+           <label for="" placeholder="">Email</label>
+           <input class="form-control" type="email" required ng-model="home.su.email"> <br>
+         </section>
+         <section >
+           <label for="" placeholder="">Username</label>
+           <input class="form-control" type="text" required ng-model="home.su.username"> <br>
+         </section>
+         <section >
+           <label for="" placeholder="">Password</label>
+           <input class="form-control" type="password" required ng-model="home.su.password"> <br>
+         </section>
+         <button  type="submit">Sign Up</button>
+       </fieldset>
+     </form>
+     <!-- Initial Angular Files -->
+     <form novalidate ng-submit="home.login()">
+       <fieldset>
+        <legend>Log In</legend>
+         <section >
+           <label>Username</label>
+           <input type="text" required ng-model="home.old.username"> <br>
+         </section>
+         <section >
+           <label>Password</label>
+           <input type="password" required ng-model="home.old.password"> <br>
+         </section>
+         <button type="submit">Log In</button>
+       </fieldset>
+     </form>
+   </section>
+ </section>
