@@ -1,0 +1,31 @@
+body {
+  max-width: 960px;
+}
+
+body > header {
+  position: fixed;
+  height: 10%;
+}
+
+body > header > nav {
+  display: block;
+  position: relative;
+  float: right;
+  width: 60%;
+}
+
+nav > ul > li {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+section, fieldset, header, nav, {
+    display: block;
+    border: 1px solid black;
+}
+
+ul {
+  margin : 0;
+  padding: 0;
+  list-style: none;
+}
