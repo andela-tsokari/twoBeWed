@@ -8,6 +8,20 @@ var client = new Schema({
     required: true
   },
 
+  contact: {
+    address: {
+      type: String
+    },
+
+    phoneNumber: {
+      type: String
+    },
+
+    email: {
+      type: String
+    }
+  },
+
   weddingDate: {
     type: Date,
     required: true
