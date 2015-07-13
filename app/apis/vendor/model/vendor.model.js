@@ -9,9 +9,7 @@ var vendor = new Schema({
   },
 
   location: {
-    city: {
-      type: String
-    }
+    type: String
   },
 
   contact: {
