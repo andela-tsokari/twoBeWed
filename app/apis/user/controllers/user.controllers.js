@@ -79,6 +79,7 @@ exports.login = function(req, res) {
                 var token = jwt.sign(profile, secret);
                 res
                   .json({
+                    user: found.username,
                     message: 'Signed In',
                     token: token
                   });
