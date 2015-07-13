@@ -1,49 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="TwoBeWed" >
   <head>
     <title>TwoBeWed App</title>
-    <!-- <link rel="stylesheet" href="libs/bootstrap-3.3.5-dist/bootstrap.css" /> -->
+    <link rel="stylesheet" type="text/css" href="./libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/twobewed.css">
     <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1" />
   </head>
-  <body ng-app="TwoBeWed" style="margin: 0 auto; width: 400px;">
-    <form ng-controller="signup as new" ng-submit="new.signup()" novalidate>
-      <fieldset>
-        <legend>Sign Up</legend>
-        <input type="text" required ng-model="new.name"> <br>
-        <input type="email" required ng-model="new.email"> <br>
-        <input type="text" required ng-model="new.username"> <br>
-        <input type="password" required ng-model="new.password"> <br>
-        <button type="submit">Sign Up</button>
-      </fieldset>
-    </form>
-    <!-- Initial Angular Files -->
-    <form ng-controller="login as old" ng-submit="old.login()" novalidate ng-submit="">
-      <fieldset>
-        <legend>Log In</legend>
-        <input type="text" required ng-model="old.username"> <br>
-        <input type="password" required ng-model="old.password"> <br>
-        <button type="submit">Log In</button>
-      </fieldset>
-    </form>
+  <body class="ng-cloak">
+    <header class="container">
+      <nav>
+        <ul>
+          <li>
+            <a ui-sref="home">Home</a>
+          </li>
+          <li>
+            <a ui-sref="client">Clients</a>
+          </li>
+          <li>
+            <a ui-sref="vendor">Vendors</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section ui-view>
 
-    <!-- Angular Core and Extras -->
-    <script type="text/javascript" src="libs/angular/angular.js"></script>
-    <script type="text/javascript" src="libs/angular-resource/angular-resource.js">
-    </script>
-    <script type="text/javascript" src="libs/angular-route/angular-route.js">
-    </script>
-    <script type="text/javascript" src="libs/angular-cookies/angular-cookies.js">
-    </script>
-    <script type="text/javascript" src="libs/angular-bootstrap/ui-bootstrap.js">
-    </script>
-    <!-- Angular Modules -->
-    <script type="text/javascript" src="app/client(frontend)/app.js"></script>
-    <!-- Angular Controllers -->
-    <script type="text/javascript" src="app/client(frontend)/user/controllers/signup.controller.js">
-    </script>
-    <script type="text/javascript" src="app/client(frontend)/user/controllers/login.controller.js">
-    </script>
-    <!-- Angular Services -->
+    </section>
+
+    <footer>
+
+    </footer>
+
+    <!--  Core Angular Scripts and Extras-->
+
+    <script type="text/javascript" src="./libs/angular/angular.min.js"></script>
+    <script type="text/javascript"
+    src="./libs/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="./libs/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script type="text/javascript" src="./libs/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="./libs/angular-cookies/angular-cookies.min.js"></script>
+
+    <!-- My Angular Modules -->
+    <script type="text/javascript" src="./app/frontend/app.js"></script>
+
+
+    <!-- My Angular Controllers -->
+    <script type="text/javascript"
+    src="./app/frontend/controllers/home.controller.js"></script>
+    <script type="text/javascript"
+    src="./app/frontend/controllers/client.controller.js"></script>
 
   </body>
 </html>
