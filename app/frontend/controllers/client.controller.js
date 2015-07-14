@@ -12,7 +12,7 @@
 
     vm.add = function() {
       $http
-        .post(dev + '/clients', vm.newclient, config)
+        .post(prod + '/clients', vm.newclient, config)
         .success(function(data) {
           $location.path('/clients');
           vm.newclient = {};
@@ -24,7 +24,7 @@
 
     vm.getAll = function() {
       $http
-        .get(dev + '/clients', config)
+        .get(prod + '/clients', config)
         .success(function(data) {
           vm.clients = data;
         })
@@ -40,7 +40,7 @@
       });
 
       $http
-        .get(dev + '/clients/{{one._id}}', config)
+        .get(prod + '/clients/{{one._id}}', config)
         .success(function(data) {
           console.log(data);
         });

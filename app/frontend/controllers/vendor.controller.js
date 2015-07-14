@@ -1,4 +1,4 @@
-(function() {
+ (function() {
   'use strict';
   function vendorCtrl ($http, $location, $cookies, dev, prod) {
     // body...
@@ -12,7 +12,7 @@
 
     vm.add = function() {
       $http
-        .post(dev + '/vendors', vm.vendor, config)
+        .post(prod + '/vendors', vm.vendor, config)
         .success(function(data) {
           console.log(data);
         })

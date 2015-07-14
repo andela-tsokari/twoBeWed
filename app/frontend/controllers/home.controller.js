@@ -16,7 +16,7 @@
       var su = angular.copy(vm.su);
 
       $http
-        .post(dev + '/signup', su)
+        .post(prod + '/signup', su)
         .success(function(data, status, headers) {
           console.log(status, headers, data);
         })
@@ -30,7 +30,7 @@
       var old = angular.copy(vm.old);
 
       $http
-        .post(dev + '/login', old)
+        .post(prod + '/login', old)
         .success(function(data) {
           console.log(data);
           $cookies.put('tbw-token', data.token);
@@ -51,7 +51,7 @@
 
     vm.logout = function() {
       $http
-        .get(dev + '/logout', config)
+        .get(prod + '/logout', config)
         .success(function(data) {
           $cookies.put('tbw-token', null);
         });
