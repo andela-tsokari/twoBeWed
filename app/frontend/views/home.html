@@ -1,52 +1,55 @@
  <section ng-cloak>
-  <tabset justified="true">
-    <tab heading="Sign Up">
+  <md-tabs>
+    <md-tab label="Sign Up">
       <form name="signup" novalidate ng-submit="signup$valid && home.signup()">
         <fieldset>
-          <section class="form-group">
+          <md-input-container class="">
             <label>Name
             </label>
-            <input class="form-control" type="text" required
+            <input class="" type="text" required
             ng-model="home.su.name" placeholder="Your Name">
-          </section>
-          <section class="form-group">
+          </md-input-container>
+          <md-input-container class="">
             <label for="" >Email
             </label>
-            <input class="form-control" type="email" required
+            <input class="" type="email" required
             ng-model="home.su.email" placeholder="Your user@twobewed.com email address">
-          </section>
-          <section class="form-group">
+          </md-input-container>
+          <md-input-container class="">
             <label for="" placeholder="">Username
             </label>
-            <input class="form-control" type="text" required
+            <input class="" type="text" required
             ng-model="home.su.username" placeholder="Username">
-          </section>
-          <section class="form-group">
+          </md-input-container>
+          <md-input-container class="">
             <label for="" placeholder="">Password
             </label>
-            <input class="form-control" type="password" required
+            <input class="" type="password" required
             ng-model="home.su.password" placeholder="Password">
-          </section>
-          <button class="btn btn-primary btn-lg btn-block" type="submit" ng-click="home.signup()">Sign Up</button>
+          </md-input-container>
+          <button class="" type="submit" ng-click="home.signup()">Sign Up</button>
         </fieldset>
       </form>
-    </tab>
-    <tab heading="Log In">
-      <form name="login" novalidate ng-submit="login$valid&&home.login()">
-        <fieldset>
-          <section class="form-group">
-            <label>Username</label>
-            <input class="form-control" type="text" required
-              ng-model="home.old.username" placeholder="username">
-          </section>
-          <section class="form-group">
-            <label>Password</label>
-            <input class="form-control" type="password" required
-              ng-model="home.old.password" placeholder="password">
-          </section>
-          <button class="btn btn-primary btn-lg btn-block" type="submit" ng-click="home.login()">Log In</button>
-        </fieldset>
-      </form>
-    <tab>
-  </tabset>
+    </md-tab>
+    <md-tab>
+      <md-tab-label>Log In</md-tab-label>
+      <md-tab-body>
+        <form name="login" novalidate ng-submit="login$valid && home.login()">
+          <fieldset>
+            <md-input-container class="">
+              <label>Username</label>
+              <input class="" type="text" required
+                ng-model="home.old.username" placeholder="username">
+            </md-input-container>
+            <md-input-container class="">
+              <label>Password</label>
+              <input class="" type="password" required
+                ng-model="home.old.password" placeholder="password">
+            </md-input-container>
+            <button class="" type="submit" ng-click="home.login()">Log In</button>
+          </fieldset>
+        </form>
+      </md-tab-body>
+    </md-tab>
+  </md-tabs>
  </section>

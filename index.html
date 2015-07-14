@@ -2,14 +2,18 @@
 <html ng-app="TwoBeWed" >
   <head>
     <title>TwoBeWed App</title>
-    <link rel="stylesheet" type="text/css" href="./libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+    href="./libs/material-design-lite/material.min.css">
+    <link rel="stylesheet" type="text/css"
+    href="./libs/angular-material/angular-material.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/twobewed.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1" />
   </head>
   <body class="ng-cloak">
-    <header>
-      <section class="container">
+    <md-toolbar>
+      <section class="md-toolbar-tools">
         <nav>
           <ul>
             <li>
@@ -24,13 +28,12 @@
           </ul>
         </nav>
       </section>
-    </header>
-    <section style="max-height: 80%; width: 80%; margin: auto;
+    </md-toolbar>
+    <md-content style="max-height: 80%; width: 80%; margin: auto;
     position: absolute; top: 0; right: 0; bottom: 0; left: 0;
-    padding: 10px; border-radius: 10px; overflow: hidden;" ui-view>
+    padding: 10px; border-radius: 10px;" ui-view>
 
-    </section>
-
+    </md-content>
     <footer>
 
     </footer>
@@ -41,9 +44,11 @@
     <script type="text/javascript"
     src="./libs/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script type="text/javascript"
-    src="./libs/angular-bootstrap/ui-bootstrap.min.js"></script>
+    src="./libs/angular-aria/angular-aria.min.js"></script>
     <script type="text/javascript"
-    src="./libs/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    src="./libs/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript"
+    src="./libs/angular-material/angular-material.min.js"></script>
     <script type="text/javascript"
     src="./libs/angular-cookies/angular-cookies.min.js"></script>
 

@@ -23,7 +23,7 @@
   }
 
   angular
-    .module('TwoBeWed', ['ui.router', 'ui.bootstrap', 'ngCookies'])
+    .module('TwoBeWed', ['ui.router', 'ngMaterial', 'ngCookies'])
     .config(['$stateProvider', '$urlRouterProvider', states]);
 
 
