@@ -8,22 +8,26 @@
     <meta name="viewport" content="initial-scale=1" />
   </head>
   <body class="ng-cloak">
-    <header class="container">
-      <nav>
-        <ul>
-          <li>
-            <a ui-sref="home">Home</a>
-          </li>
-          <li>
-            <a ui-sref="client">Clients</a>
-          </li>
-          <li>
-            <a ui-sref="vendor">Vendors</a>
-          </li>
-        </ul>
-      </nav>
+    <header>
+      <section class="container">
+        <nav>
+          <ul>
+            <li>
+              <a ui-sref="home">Home</a>
+            </li>
+            <li>
+              <a ui-sref="client">Clients</a>
+            </li>
+            <li>
+              <a ui-sref="vendor">Vendors</a>
+            </li>
+          </ul>
+        </nav>
+      </section>
     </header>
-    <section ui-view>
+    <section style="max-height: 80%; width: 80%; margin: auto;
+    position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+    padding: 10px; border-radius: 10px; overflow: hidden;" ui-view>
 
     </section>
 
@@ -36,13 +40,19 @@
     <script type="text/javascript" src="./libs/angular/angular.min.js"></script>
     <script type="text/javascript"
     src="./libs/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script type="text/javascript" src="./libs/angular-bootstrap/ui-bootstrap.min.js"></script>
-    <script type="text/javascript" src="./libs/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
-    <script type="text/javascript" src="./libs/angular-cookies/angular-cookies.min.js"></script>
+    <script type="text/javascript"
+    src="./libs/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script type="text/javascript"
+    src="./libs/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript"
+    src="./libs/angular-cookies/angular-cookies.min.js"></script>
 
     <!-- My Angular Modules -->
     <script type="text/javascript" src="./app/frontend/app.js"></script>
 
+    <!-- My Angular Constants -->
+    <script type="text/javascript"
+    src="./app/frontend/constants/url.constants.js"></script>
 
     <!-- My Angular Controllers -->
     <script type="text/javascript"

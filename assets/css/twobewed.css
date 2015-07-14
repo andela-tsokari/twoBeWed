@@ -1,31 +1,54 @@
 body {
-  max-width: 960px;
+  max-width: 100%;
 }
 
 body > header {
   position: fixed;
-  height: 10%;
-}
-
-body > header > nav {
   display: block;
-  position: relative;
-  float: right;
-  width: 60%;
+  height: 10%;
+  width: 100%;
+  background-color: teal;
+  z-index: 9999;
 }
 
 nav > ul > li {
-  vertical-align: middle;
   display: inline-block;
+  vertical-align: middle;
+  padding-right: 20px;
 }
 
-section, fieldset, header, nav, {
-    display: block;
-    border: 1px solid black;
+section, fieldset, header, nav {
+  display: block;
+}
+
+nav {
+  position: relative;
+  float: right;
+  vertical-align: middle;
+  height: 100%;
+  width: 60%;
 }
 
 ul {
   margin : 0;
   padding: 0;
   list-style: none;
+}
+
+#contacts {
+  display: block;
+  float: left;
+  width: 50%;
+}
+
+#contacts > * {
+  display: block;
+  width: 100%;
+  padding-right: 5px;
+}
+
+datepicker {
+  display: block;
+  width: 50%;
+  float: right;
 }

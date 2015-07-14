@@ -1,118 +1,55 @@
-<section ng-cloak style="width: 80%; height: 80%; margin: auto; position: absolute; top: 0; right: 0; bottom: 0; left: 0;">
-  <tabset justified="true">
+<section ng-cloak>
+  <tabset justified="true" style="overflow: scroll">
     <tab heading="New Client">
-      <form novalidate ng-submit="client.add()">
+      <form name="newClient"novalidate ng-submit="newClient$valid && client.add()" >
         <fieldset>
-          <legend>Client Information</legend>
-          <label>
-            Client Name
-            <input class="form-control" type="text" ng-model="client.client.name"/>
-          </label><br/>
-          <label>Address
-            <input class="form-control" type="text" ng-model="client.client.contact.address">
-          </label><br/>
-          <label>Phone Number
-            <input class="form-control" type="tel" ng-model="client.client.contact.phoneNumber">
-          </label><br/>
-          <label>Email
-            <input class="form-control" type="email" ng-model="client.client.contact.email">
-          </label><br/>
+          <section id="contacts">
+            <label>
+              Client Name
+              <input class="form-control" type="text" ng-model="client.newclient.name"/>
+            </label><br />
+            <label>Phone Number
+              <input class="form-control" type="tel" ng-model="client.newclient.contact.phoneNumber">
+            </label><br />
+            <label>Email
+              <input class="form-control" type="email" ng-model="client.newclient.contact.email">
+            </label><br />
+            <label>Address
+              <input class="form-control" type="text" ng-model="client.newclient.contact.address">
+            </label><br/>
+          </section>
           <label>
             Wedding Date
-            <datepicker min-date="minDate" show-weeks="true" class="well well-sm" custom-class="getDayClass(date, mode)" ng-model="client.client.weddingDate"></datepicker>
+            <datepicker min-date="minDate" show-weeks="false" class="well well-sm" custom-class="getDayClass(date, mode)" ng-model="client.newclient.weddingDate"></datepicker>
           </label><br/>
         </fieldset>
         <fieldset>
-          <legend>Package</legend>
           <label>Main Package</label>
-          <select class="form-control" ng-model="client.client.package.main">
+          <select placeholder="Choose from our packages" class="form-control"
+          ng-model="client.newclient.package.main">
             <option>Too Good Two be True</option>
             <option>Two is Better Than One</option>
             <option>Two by Two</option>
             <option>Let's Get Two-gether</option>
             <option>Take Two</option>
           </select>
-         <!--  <ul>
-            <p>Selected Items: {{client.package.extra0}}
-            <li>
-              <label>
-              <input type="checkbox" ng-model="client.package.extra0" name="Bridal Shower and Luncheon" ng-value="Engagement Party" ng-true-value="Engagement Part"/>
-              Engagement Party
-              </label>
-            </li>
-            <li>
-              <label>
-              <input type="checkbox" ng-model="client.package.extra1" name="Rehearsal Dinner" ng-true-value="Bridal Shower and Luncheon"/>
-              Bridal Shower and Luncheon
-              </label>
-            </li>
-            <li>
-              <label>
-              <input type="checkbox" ng-model="client.package.extra2" name="Post Wedding Day Brunch" ng-true-value="Rehearsal Dinner"/>
-              Rehearsal Dinner
-              </label>
-            </li>
-            <li>
-              <label>
-              <input type="checkbox" ng-model="client.package.extra3" name="Invitation RSVP Management" ng-true-value="Post Wedding Day Brunch"/>
-              Post Wedding Day Brunch
-              </label>
-            </li>
-            <li>
-              <label>
-              <input type="checkbox" ng-model="client.package.extra4" name="Hospitality Suite Management" ng-true-value="Invitation RSVP Management"/>
-              Invitation RSVP Management
-              </label>
-            </li>
-            <li>
-              <label>
-              <input type="checkbox" ng-model="client.package.extra5" name="Wedding Invitation Assembly" ng-true-value="Hospitality Suite Management"/>
-              Hospitality Suite Management
-              </label>
-            </li>
-            <li>
-              <label>
-              <input type="checkbox" ng-model="client.package.extra6" name="Welcome Bags Design / Purchasing / Assembly / Delivery" ng-true-value="Wedding Invitation Assembly"/>
-              Wedding Invitation Assembly
-              </label>
-            </li>
-            <li>
-              <label>
-              <input type="checkbox" ng-model="client.package.extra7" name="Hourly consultations" ng-true-value="Welcome Bags Design / Purchasing / Assembly / Delivery"/>
-              Welcome Bags Design / Purchasing / Assembly / Delivery
-              </label>
-            </li>
-            <li>
-              <label>
-              <input type="checkbox" ng-model="client.package.extra8" name="Style and Design Consultation" ng-true-value="Hourly consultations"/>
-              Hourly consultations
-              </label>
-            </li>
-            <li>
-              <label>
-              <input type="checkbox" ng-model="client.package.extra9" ng-true-value="Style and Design Consultation"/>
-              Style and Design Consultation
-              </label>
-            </li>
-          </ul> -->
         </fieldset>
-        <fieldset>
+        <fieldset class="form-inline" >
           <legend>Wedding Location</legend>
           <label>City
-            <input type="text" ng-model="client.client.location.city">
-          </label><br>
+            <input class="form-control" type="text" ng-model="client.newclient.location.city">
+          </label>
           <label>Preferred Venue
-            <input type="text" ng-model="client.client.location.preferredVenue">
+            <input class="form-control" type="text" ng-model="client.newclient.location.preferredVenue">
           </label><br>
         </fieldset>
-        {{client}}
-        <button type="submit">Add Client</button>
+        <button ng-click="client.add()" class="btn btn-primary btn-lg btn-block" type="submit">Add Client</button>
       </form>
     </tab>
     <tab heading="Clients" ng-click="client.getAll()">
-      <table class="table">
+      <table class="table table-striped" >
         <thead>
-          <tr class="table-striped">
+          <tr class="">
             <td>Client Name</td>
             <td>Wedding Date</td>
             <td>Package</td>
@@ -120,15 +57,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="client in client.clients">
-            <td>{{client.name}}</td>
-            <td>{{client.weddingDate | date: d-MMM-yyyy}}</td>
-            <td>{{client.package.main}}</td>
-            <td>{{client.planner}}</td>
+          <tr ng-repeat="one in client.clients">
+            <td>{{one.name}}</td>
+            <td>{{one.weddingDate | date: d-MMM-yyyy}}</td>
+            <td>{{one.package.main}}</td>
+            <td>{{one.planner}}</td>
           </tr>
         </tbody>
       </table>
     </tab>
-    <tab heading="Client Details"></tab>
+    <!-- <tab heading="Client Details"></tab> -->
   </tabset>
 </section>

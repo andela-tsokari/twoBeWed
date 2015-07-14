@@ -15,6 +15,7 @@
         .post(dev + '/clients', vm.newclient, config)
         .success(function(data) {
           $location.path('/clients');
+          vm.newclient = {};
         })
         .error(function(data) {
           console.log(data);
@@ -33,10 +34,15 @@
     };
 
     vm.getOne = function() {
+
+      angular.forEach(vm.clients, function(index, element) {
+        console.log(element);
+      });
+
       $http
-        .get(dev + '/clients', config)
+        .get(dev + '/clients/{{one._id}}', config)
         .success(function(data) {
-          vm.client = data;
+          console.log(data);
         });
     };
   }
