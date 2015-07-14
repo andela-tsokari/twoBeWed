@@ -1,15 +1,17 @@
 var vendor = require('./../controllers/vendor.controllers');
 
+var auth = require('./../../../../config/auth-mid');
+
 module.exports = function(router) {
   router
     .route('/vendors')
-    .get(vendor.getAll)
-    .post(vendor.create);
+    .get(auth, vendor.getAll)
+    .post(auth, vendor.create);
 
   router
     .route('/vendors/:id')
-    .get(vendor.getById)
-    .put(vendor.editById)
-    .delete(vendor.deleteById);
+    .get(auth, vendor.getById)
+    .put(auth, vendor.editById)
+    .delete(auth, vendor.deleteById);
 
 };

@@ -1,0 +1,71 @@
+<section ng-cloak>
+  <tabset justified="true" style="overflow: scroll">
+    <tab heading="New Client">
+      <form name="newClient"novalidate ng-submit="newClient$valid && client.add()" >
+        <fieldset>
+          <section id="contacts">
+            <label>
+              Client Name
+              <input class="form-control" type="text" ng-model="client.newclient.name"/>
+            </label><br />
+            <label>Phone Number
+              <input class="form-control" type="tel" ng-model="client.newclient.contact.phoneNumber">
+            </label><br />
+            <label>Email
+              <input class="form-control" type="email" ng-model="client.newclient.contact.email">
+            </label><br />
+            <label>Address
+              <input class="form-control" type="text" ng-model="client.newclient.contact.address">
+            </label><br/>
+          </section>
+          <label>
+            Wedding Date
+            <datepicker min-date="minDate" show-weeks="false" class="well well-sm" custom-class="getDayClass(date, mode)" ng-model="client.newclient.weddingDate"></datepicker>
+          </label><br/>
+        </fieldset>
+        <fieldset>
+          <label>Main Package</label>
+          <select placeholder="Choose from our packages" class="form-control"
+          ng-model="client.newclient.package.main">
+            <option>Too Good Two be True</option>
+            <option>Two is Better Than One</option>
+            <option>Two by Two</option>
+            <option>Let's Get Two-gether</option>
+            <option>Take Two</option>
+          </select>
+        </fieldset>
+        <fieldset class="form-inline" >
+          <legend>Wedding Location</legend>
+          <label>City
+            <input class="form-control" type="text" ng-model="client.newclient.location.city">
+          </label>
+          <label>Preferred Venue
+            <input class="form-control" type="text" ng-model="client.newclient.location.preferredVenue">
+          </label><br>
+        </fieldset>
+        <button ng-click="client.add()" class="btn btn-primary btn-lg btn-block" type="submit">Add Client</button>
+      </form>
+    </tab>
+    <tab heading="Clients" ng-click="client.getAll()">
+      <table class="table table-striped" >
+        <thead>
+          <tr class="">
+            <td>Client Name</td>
+            <td>Wedding Date</td>
+            <td>Package</td>
+            <td>Assigned Planner</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="one in client.clients">
+            <td>{{one.name}}</td>
+            <td>{{one.weddingDate | date: d-MMM-yyyy}}</td>
+            <td>{{one.package.main}}</td>
+            <td>{{one.planner}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </tab>
+    <!-- <tab heading="Client Details"></tab> -->
+  </tabset>
+</section>

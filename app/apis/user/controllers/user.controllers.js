@@ -69,9 +69,17 @@ exports.login = function(req, res) {
                   });
               }
               else if (valid) {
-                var token = jwt.sign(found, secret);
+                var profile = {
+                  username: found.username,
+                  name: found.name,
+                  email: found.email,
+                  issuer: 'twobewed'
+                };
+
+                var token = jwt.sign(profile, secret);
                 res
                   .json({
+                    user: found.username,
                     message: 'Signed In',
                     token: token
                   });
@@ -137,6 +145,7 @@ exports.auth = function(req, res) {
               .status(200)
               .json({
                 user: dbuser.username,
+                issuer: details.issuer,
                 auth_status: true,
                 message: dbuser.username + ' is registered and authorised'
               });
@@ -172,17 +181,10 @@ exports.auth = function(req, res) {
 
 exports.logout = function(req, res) {
 
-  userModel
-    .where({
-      username: request.params.username
-    })
-    .fetch()
-    .then(function(dbuser) {
-      response
-        .status(200)
-        .json({
-          message: dbuser.attributes.username + ' has been logged out'
-        });
+  res
+    .status(200)
+    .json({
+      message: 'you have been logged out'
     });
 
 };

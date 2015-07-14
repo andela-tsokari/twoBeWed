@@ -1,15 +1,17 @@
 var client = require('./../controllers/client.controllers');
 
+var auth = require('./../../../../config/auth-mid');
+
 module.exports = function(router) {
   router
     .route('/clients')
-    .get(client.getAll)
-    .post(client.create);
+    .get(auth, client.getAll)
+    .post(auth, client.create);
 
   router
     .route('/clients/:id')
-    .get(client.getById)
-    .put(client.editById)
-    .delete(client.deleteById);
+    .get(auth, client.getById)
+    .put(auth, client.editById)
+    .delete(auth, client.deleteById);
 
 };
