@@ -3,9 +3,10 @@
 
   angular
     .module('TwoBeWed')
-    .controller('HomeCtrl', ['$http', '$location', '$cookies', homeCtrl]);
+    .controller('HomeCtrl', ['$http', '$location', '$cookies', 'dev', 'prod',
+      homeCtrl]);
 
-  function homeCtrl ($http, $location, $cookies) {
+  function homeCtrl ($http, $location, $cookies, dev, prod) {
     // body...
     var vm = this;
 
@@ -15,7 +16,7 @@
       var su = angular.copy(vm.su);
 
       $http
-        .post('http://localhost:4000/api/v1/signup', su)
+        .post(dev + '/signup', su)
         .success(function(data, status, headers) {
           console.log(status, headers, data);
         })
@@ -29,9 +30,12 @@
       var old = angular.copy(vm.old);
 
       $http
-        .post('http://localhost:4000/api/v1/login', old)
+        .post(dev + '/login', old)
         .success(function(data) {
+          console.log(data);
           $cookies.put('tbw-token', data.token);
+          vm.message = 'Welcome' + data.user;
+          $location.path('/clients');
         })
         .error(function(data, status, headers) {
           console.log(data, status, headers);
@@ -47,7 +51,7 @@
 
     vm.logout = function() {
       $http
-        .get('http://localhost:4000/api/v1/login', config)
+        .get(dev + '/logout', config)
         .success(function(data) {
           $cookies.put('tbw-token', null);
         });
