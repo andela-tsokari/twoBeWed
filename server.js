@@ -1,5 +1,6 @@
 var config = require('./config/db-config');
 var mongoose = require('mongoose');
+var express = require('express');
 
 var db = mongoose.connect(config.db[process.env.NODE_ENV].uri,
   config.db[process.env.NODE_ENV].options, function (err) {
@@ -15,6 +16,7 @@ mongoose.connection.on('error', function (err) {
 
 var app = require('./config/app-config')(db);
 
-app.listen(config.port, function () {
+app
+  .listen(config.port, function () {
     console.log('Users-API listening on Port: ' + config.port);
 });

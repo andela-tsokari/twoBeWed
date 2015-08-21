@@ -13,6 +13,11 @@ module.exports = function() {
   app
     .use(cors())
     .use(bodyParser.json())
+    .use(express.static(__dirname.slice(0, (__dirname.length - 6))))
+    .get('/', function(req, res) {
+      res
+        .sendFile(__dirname.slice(0, (__dirname.length - 6)));
+    })
     .use(bodyParser.urlencoded({extended: true}))
     .use('/api/v1/', router);
 
