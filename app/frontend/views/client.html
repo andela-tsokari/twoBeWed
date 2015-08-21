@@ -30,17 +30,17 @@
           </md-input-container>
         </fieldset>
         <fieldset>
-          <md-select ng-model="client.newclient.package.main" placeholder=
-          "Main Package">
-            <md-option value="Too Good Two be True">Too Good Two be True
-            </md-option>
-            <md-option value="Two is Better Than One">Two is Better Than One
-            </md-option>
-            <md-option value="Two by Two">Two by Two</md-option>
-            <md-option value="Let's Get Two-gether">Let's Get Two-gether
-            </md-option>
-            <md-option value="Take Two">Take Two</md-option>
-          </md-select>
+          <md-input-container>
+            <label>Main Package</label>
+            <select placeholder="Choose from our packages" class="form-control"
+            ng-model="client.newclient.package.main">
+              <option>Too Good Two be True</option>
+              <option>Two is Better Than One</option>
+              <option>Two by Two</option>
+              <option>Let's Get Two-gether</option>
+              <option>Take Two</option>
+            </select>
+          </md-input-container>
           <section flex="30" ng-repeat="option in client.options">
             <md-checkbox
             ng-click="client.insert(option, client.newclient.package.extras)">

@@ -78,6 +78,22 @@
     };
 
 /*
+    $scope.deleteRunningTimer = function ( runningTimer ) {
+
+      var index = $scope.runningTimers.indexOf( runningTimer );
+
+      $scope.confirm = window.confirm("Are You Sure You Want to Delete this Running Timer?");
+
+      if ($scope.confirm === true) {
+
+        $scope.runningTimers.splice( index, 1 );
+
+      }
+
+      return;
+
+    };
+
     $scope.editRunningTimer = function ( runningTimer ) {
 
       var index = $scope.runningTimers.indexOf( runningTimer );
@@ -105,10 +121,6 @@
 
         });
 
-      }
-
-      else {
-        return;
       }
     };
 
